@@ -43,13 +43,14 @@ Uma ferramenta como esta permite:
 ```shell
 ## Flyway
 #Customizando a pasta de scripts por banco de dados
-spring.flyway.check-location=false
+spring.flyway.fail-on-missing-locations=false
 spring.flyway.locations=classpath:/db/migration/postgres
 spring.jpa.defer-datasource-initialization=false
 ```
+
 Vamos conhecer as propriedades abaixo:
 
-* `spring.flyway.check-location=false` : nos da a liberdade de definir um diretório para nossos scripts
+* `spring.flyway.fail-on-missing-locations=false` : nos da a liberdade de definir um diretório para nossos scripts
 * `spring.flyway.locations=classpath:/db/migration/postgres` : informamos aonde estarão inseridos nossos scripts `.sql`
 * `spring.jpa.defer-datasource-initialization=false` : informamos para o SpringBoot não mais gerenciar a estratégia de geração de scripts sql de forma automática.
 
@@ -68,6 +69,29 @@ Precisamos agora realizar uma última operação para concluir nossa configuraç
 ```shell
 spring.jpa.hibernate.ddl-auto=none
 ```
+
+Ao iniciar sua aplicação você deverá visualizar os 03 comportamentos abaixo:
+
+1. Resultado no console
+
+```
+2023-04-08 15:33:31.127  INFO 14168 --- [           main] o.f.c.i.database.base.BaseDatabaseType   : Database: jdbc:postgresql://localhost:5432/crud-api (PostgreSQL 15.2)
+2023-04-08 15:33:31.132  WARN 14168 --- [           main] o.f.c.internal.database.base.Database    : Flyway upgrade recommended: PostgreSQL 15.2 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 14.
+2023-04-08 15:33:31.153  INFO 14168 --- [           main] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.013s)
+2023-04-08 15:33:31.163  INFO 14168 --- [           main] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table "public"."flyway_schema_history" ...
+2023-04-08 15:33:31.203  INFO 14168 --- [           main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": << Empty Schema >>
+2023-04-08 15:33:31.206  INFO 14168 --- [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "public" to version "01.01 - drop tab cliente if exists"
+2023-04-08 15:33:31.210  INFO 14168 --- [           main] o.f.c.i.s.DefaultSqlScriptExecutor       : DB: table "tab_cliente" does not exist, skipping
+2023-04-08 15:33:31.220  INFO 14168 --- [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "public" to version "01.02 - create tab cliente"
+2023-04-08 15:33:31.233  INFO 14168 --- [           main] o.f.core.internal.command.DbMigrate      : Successfully applied 2 migrations to schema "public", now at version v01.02 (execution time 00:00.034s)
+```
+
+2. Seu banco passará a tebela `public.flyway_schema_history`
+3. Sua tabela `tab_cliente será` (re)criada
+
+
+
+![image](https://github.com/glysns/backend-stater-kit/blob/main/spring/springboot-crud-api/src/main/resources/img/flyway.png)
 
 ### CRUD de Clientes
 

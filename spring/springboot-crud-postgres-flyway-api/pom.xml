@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>digytal</groupId>
-	<artifactId>springboot-crud-postgres-api</artifactId>
+	<artifactId>springboot-crud-postgres-flyway-api</artifactId>
 	<version>1.0</version>
-	<name>springboot-crud-postgres-api</name>
-	<description>springboot-crud-postgres-api</description>
+	<name>springboot-crud-postgres-flyway-api</name>
+	<description>springboot-crud-postgres-flyway-api</description>
 	<properties>
 		<java.version>1.8</java.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -53,6 +53,11 @@
 			<groupId>org.springdoc</groupId>
 			<artifactId>springdoc-openapi-ui</artifactId>
 			<version>1.6.4</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.flywaydb</groupId>
+			<artifactId>flyway-core</artifactId>
 		</dependency>
 
 	</dependencies>
