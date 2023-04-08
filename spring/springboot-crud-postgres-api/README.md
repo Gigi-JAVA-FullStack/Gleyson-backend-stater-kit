@@ -48,13 +48,13 @@ O SpringBootDataJpa proporciona uma configuração adicional para bancos de dado
 #### **`application.properties`**
 ```
 # -> none / update
-spring.jpa.hibernate.ddl-auto:update
+spring.jpa.hibernate.ddl-auto=update
 ```
 
 Se preferir, você também poderá habilitar um console para acompanhar todo comando sql executado em sua aplicação.
 
 ```
-spring.jpa.show-sql: true
+spring.jpa.show-sql=true
 ```
 
 ### CRUD de Clientes
