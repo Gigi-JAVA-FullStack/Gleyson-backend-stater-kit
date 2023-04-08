@@ -1,4 +1,7 @@
 package digytal.backend.api.repository;
 
-public interface ClienteRepository {
+import digytal.backend.api.model.ClienteEntity;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface ClienteRepository extends JpaRepository<ClienteEntity, Integer> {
 }
