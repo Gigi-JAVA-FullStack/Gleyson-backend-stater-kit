@@ -86,7 +86,7 @@ Ao iniciar sua aplicação você deverá visualizar os 03 comportamentos abaixo:
 2023-04-08 15:33:31.233  INFO 14168 --- [           main] o.f.core.internal.command.DbMigrate      : Successfully applied 2 migrations to schema "public", now at version v01.02 (execution time 00:00.034s)
 ```
 
-2. Seu banco passará a tebela `public.flyway_schema_history`
+2. Seu banco passará a ter tabela `public.flyway_schema_history`
 3. Sua tabela `tab_cliente será` (re)criada
 
 
