@@ -16,11 +16,11 @@ Este projeto é um modelo para que você possa desenvolver sua primeira aplicaç
 * Java 1.8+
 * SpringBoot 2.7.4
 * SpringDataJpa
+* Hibernate
 * SpringWeb
 * SpringTest
 * Projeto Lombok
 * H2 database
-* Postgres - configuração
 * Swagger OpenAPI
 
 ### Dependências
