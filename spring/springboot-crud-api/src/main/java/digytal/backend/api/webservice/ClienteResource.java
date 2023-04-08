@@ -37,7 +37,7 @@ public class ClienteResource {
     public ClienteResponse getOne(@PathVariable("id") Integer id){
         return service.getOne(id);
     }
-    @GetMapping("/{id}")
+    @DeleteMapping("/{id}")
     public void delete(@PathVariable("id") Integer id){
         service.delete(id);
     }

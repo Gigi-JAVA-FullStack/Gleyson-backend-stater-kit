@@ -91,9 +91,9 @@ spring.h2.console.enabled=true
 
 Acesse o link : `http://localhost:8080/h2-console`
 
-![H2-IMG](/src/main/resources/img/h2-login.png)
+![**IMG**](/src/main/resources/img/h2-login.png)
 
-![H2-IMG](/src/main/resources/img/h2-sql.png)
+![**IMG**](/src/main/resources/img/h2-sql.png)
 #### Documentação da API
 
 O Swagger é um framework composto por diversas ferramentas que, independente da linguagem, auxilia a descrição, consumo e visualização de serviços de uma API REST.
@@ -106,9 +106,7 @@ O Swagger é um framework composto por diversas ferramentas que, independente da
 </dependency>
 ```
 
-Ao iniciar o seu projeto, acesse a documentação do sua aplicação através do link: 
-
-`http://localhost:8080/swagger-ui/index.html`
+Ao iniciar o seu projeto, acesse a documentação do sua aplicação através do link: `http://localhost:8080/swagger-ui/index.html`
 
 ### Estrutura do projeto
 
@@ -133,8 +131,21 @@ Para implementar nosso projeto seguindo esta diretriz, organizando a nossa camad
 * Request - Classe que será utilizada para realizar operações de inclusão e alteração de registros
 * Response - Classe que representa a resposta no formato JSon das consultas realizadas pela aplicação.
 
+### Executando a aplicação
 
+Para executar a aplicação é simples, basta abrir a classe `SpringbootCrudApiApplication` e ativar  `run` ou `debug` em sua ide.
 
+Estando tudo certinho conforme logo abaixo, basta acessar o link: `http://localhost:8080/swagger-ui/index.html`
 
+```shell
+2023-04-08 13:08:56.368  INFO 20680 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-04-08 13:08:56.375  INFO 20680 --- [           main] d.b.api.SpringbootCrudApiApplication     : Started SpringbootCrudApiApplication in 3.096 seconds (JVM running for 4.029)
+2023-04-08 13:09:00.612  INFO 20680 --- [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-04-08 13:09:00.612  INFO 20680 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-04-08 13:09:00.613  INFO 20680 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-04-08 13:09:01.196  INFO 20680 --- [nio-8080-exec-4] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 299 ms
+```
+
+![**IMG**](/src/main/resources/img/swagger-crud-cliente.png)
 
 
