@@ -29,8 +29,9 @@ public class ClienteResource {
     public void put(@PathVariable("id") Integer id, @RequestBody ClienteRequest request){
         service.update(id,request);
     }
-    @GetMapping("/all")
-    public List<ClienteResponse> getAll(){
+    @GetMapping()
+    public List<ClienteResponse> listAll(){
         return null;
     }
+
 }

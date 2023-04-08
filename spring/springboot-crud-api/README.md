@@ -82,6 +82,17 @@ spring.datasource.password=sa
 spring.jpa.database-platform=org.hibernate.dialect.H2Dialect
 ```
 
+> O H2 disponibiliza uma interface web para visualizar as tabelas e realizar operações básicas de SQL.
+
+#### **`application.properties`**
+```shell
+spring.h2.console.enabled=true
+```
+
+Acesse o link : `http://localhost:8080/h2-console`
+
+![H2-IMG](/src/main/resources/img/h2-login.png)
+
 #### Documentação da API
 
 O Swagger é um framework composto por diversas ferramentas que, independente da linguagem, auxilia a descrição, consumo e visualização de serviços de uma API REST.
@@ -93,6 +104,10 @@ O Swagger é um framework composto por diversas ferramentas que, independente da
     <version>1.6.4</version>
 </dependency>
 ```
+
+Ao iniciar o seu projeto, acesse a documentação do sua aplicação através do link: 
+
+`http://localhost:8080/swagger-ui/index.html`
 
 ### Estrutura do projeto
 
