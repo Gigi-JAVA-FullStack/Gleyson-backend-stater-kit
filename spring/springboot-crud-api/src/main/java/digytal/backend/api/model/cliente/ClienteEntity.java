@@ -29,6 +29,7 @@ public class ClienteEntity {
     @Column(name = "renda_mensal", nullable = false, length = 9, precision = 2)
     private Double rendaMensal;
 
+    @Enumerated(EnumType.STRING)
     @Column(length = 10, nullable = false)
     private Sexo sexo;
 
