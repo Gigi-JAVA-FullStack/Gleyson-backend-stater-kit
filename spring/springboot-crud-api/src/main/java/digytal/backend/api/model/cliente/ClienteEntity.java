@@ -8,6 +8,8 @@ import lombok.Setter;
 import javax.persistence.*;
 import java.time.LocalDate;
 
+@Entity
+@Table(name = "tab_cliente")
 @Data
 public class ClienteEntity {
     @Id

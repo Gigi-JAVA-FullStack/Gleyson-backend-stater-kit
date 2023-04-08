@@ -21,6 +21,7 @@ Este projeto é um modelo para que você possa desenvolver sua primeira aplicaç
 * Projeto Lombok
 * H2 database
 * Postgres - configuração
+* Swagger OpenAPI
 
 ### Dependências
 
@@ -44,7 +45,7 @@ Um projeto SpringBoot é formada por dependência denominadas de **starters** e 
 </dependency>
 ```
 
-### Projeto Lombok
+#### Projeto Lombok
 
 O Lombok é uma biblioteca Java focada em produtividade e redução de código boilerplate que, por meio de anotações adicionadas ao nosso código, ensinamos o compilador (maven ou gradle) durante o processo de compilação a criar código Java.
 
@@ -57,33 +58,41 @@ O Lombok é uma biblioteca Java focada em produtividade e redução de código b
 </dependency>
 ```
 
-### Persistência de dados
+#### Persistência de dados
 
 O SpringBoot é facildade configurável a qualquer provedor de acesso a dados como H2Database, PostgreSQL, MySQL, SQLServer, Oracle Database entre outros, basta informar a biblioteca correspondente e configurar a sua conexão de bancos de dados no arquivo `resources/application.properties`.
 
-**Configurando o banco em memória H2Database**
+*Configurando o banco em memória H2Database*
 
 #### **`pom.xml`**
 ```xml
 <dependency>
-    <groupId>org.projectlombok</groupId>
-    <artifactId>lombok</artifactId>
-    <version>1.18.24</version>
-    <scope>provided</scope>
+    <groupId>com.h2database</groupId>
+    <artifactId>h2</artifactId>
+    <scope>runtime</scope>
 </dependency>
 ```
 
 #### **`application.properties`**
-```xml
-<dependency>
-    <groupId>org.projectlombok</groupId>
-    <artifactId>lombok</artifactId>
-    <version>1.18.24</version>
-    <scope>provided</scope>
-</dependency>
+```shell
+spring.datasource.url=jdbc:h2:mem:crud-api
+spring.datasource.driverClassName=org.h2.Driver
+spring.datasource.username=sa
+spring.datasource.password=sa
+spring.jpa.database-platform=org.hibernate.dialect.H2Dialect
 ```
 
+#### Documentação da API
 
+O Swagger é um framework composto por diversas ferramentas que, independente da linguagem, auxilia a descrição, consumo e visualização de serviços de uma API REST.
+
+```xml
+<dependency>
+    <groupId>org.springdoc</groupId>
+    <artifactId>springdoc-openapi-ui</artifactId>
+    <version>1.6.4</version>
+</dependency>
+```
 
 ### Estrutura do projeto
 
