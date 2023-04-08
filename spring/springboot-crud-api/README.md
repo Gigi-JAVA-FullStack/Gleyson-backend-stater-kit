@@ -91,9 +91,10 @@ spring.h2.console.enabled=true
 
 Acesse o link : `http://localhost:8080/h2-console`
 
-![**IMG**](/src/main/resources/img/h2-login.png)
+https://github.com/glysns/backend-stater-kit/blob/main/spring/springboot-crud-api/src/main/resources/img/h2-login.png
 
-![**IMG**](/src/main/resources/img/h2-sql.png)
+https://github.com/glysns/backend-stater-kit/blob/main/spring/springboot-crud-api/src/main/resources/img/h2-sql.png
+
 #### Documentação da API
 
 O Swagger é um framework composto por diversas ferramentas que, independente da linguagem, auxilia a descrição, consumo e visualização de serviços de uma API REST.
@@ -146,6 +147,7 @@ Estando tudo certinho conforme logo abaixo, basta acessar o link: `http://localh
 2023-04-08 13:09:01.196  INFO 20680 --- [nio-8080-exec-4] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 299 ms
 ```
 
-![**IMG**](/src/main/resources/img/swagger-crud-cliente.png)
+https://github.com/glysns/backend-stater-kit/blob/main/spring/springboot-crud-api/src/main/resources/img/swagger-crud-cliente.png
+
 
 
