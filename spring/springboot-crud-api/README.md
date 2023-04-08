@@ -93,6 +93,7 @@ Acesse o link : `http://localhost:8080/h2-console`
 
 ![H2-IMG](/src/main/resources/img/h2-login.png)
 
+![H2-IMG](/src/main/resources/img/h2-sql.png)
 #### Documentação da API
 
 O Swagger é um framework composto por diversas ferramentas que, independente da linguagem, auxilia a descrição, consumo e visualização de serviços de uma API REST.
