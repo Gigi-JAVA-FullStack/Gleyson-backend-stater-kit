@@ -1,7 +1,7 @@
 package digytal.backend.api.service;
 
-import digytal.backend.api.model.ClienteEntity;
-import digytal.backend.api.model.ClienteRequest;
+import digytal.backend.api.model.cliente.ClienteEntity;
+import digytal.backend.api.model.cliente.ClienteRequest;
 import digytal.backend.api.repository.ClienteRepository;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;

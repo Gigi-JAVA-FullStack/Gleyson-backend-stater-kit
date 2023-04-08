@@ -1,4 +1,4 @@
-package digytal.backend.api.model;
+package digytal.backend.api.model.cliente;
 
 import digytal.backend.api.enums.Sexo;
 import lombok.AccessLevel;
