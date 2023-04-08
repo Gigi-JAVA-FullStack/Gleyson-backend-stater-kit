@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SpringbootCrudPostgresApiApplication {
+public class SpringbootCrudPostgresFlywayApiApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SpringbootCrudPostgresApiApplication.class, args);
+		SpringApplication.run(SpringbootCrudPostgresFlywayApiApplication.class, args);
 	}
 
 }

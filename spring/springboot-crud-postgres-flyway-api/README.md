@@ -53,20 +53,20 @@ Vamos conhecer as propriedades abaixo:
 * `spring.flyway.locations=classpath:/db/migration/postgres` : informamos aonde estarão inseridos nossos scripts `.sql`
 * `spring.jpa.defer-datasource-initialization=false` : informamos para o SpringBoot não mais gerenciar a estratégia de geração de scripts sql de forma automática.
 
-> Observe que o banco de dados foi instalado na porta `5432` com usuário `postgres` e senha `postgres` e o `database` que iremos conectar se chamara `crud-api`. Confirme previamente a sua conexão com banco utilizando as ferramentas PGAdmin ou DBeaver. 
+### Migrations
 
-O SpringBootDataJpa proporciona uma configuração adicional para bancos de dados que não são em memória, você pode decidir se as tabelas serão criadas/atualmente ou não.
+Migrations são scripts `.sql` aonde ficam localizados as instruções de atualização de nosso banco de dados incluindo DDL e DML conforme padrão abaixo:
+
+> Veja que os scripts ficarão na pasta `/resources/db/migration/postgres` com ordem e nomes bem descritivos.
+
+
+### Gran Finale
+
+Precisamos agora realizar uma última operação para concluir nossa configuração e executar o projeto.
 
 #### **`application.properties`**
-```
-# -> none / update
-spring.jpa.hibernate.ddl-auto=update
-```
-
-Se preferir, você também poderá habilitar um console para acompanhar todo comando sql executado em sua aplicação.
-
-```
-spring.jpa.show-sql=true
+```shell
+spring.jpa.hibernate.ddl-auto=none
 ```
 
 ### CRUD de Clientes
