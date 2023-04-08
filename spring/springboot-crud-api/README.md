@@ -13,6 +13,7 @@ Este projeto é um modelo para que você possa desenvolver sua primeira aplicaç
 
 ### Tecnologias
 
+* Java 1.8+
 * SpringBoot 2.7.4
 * SpringDataJpa
 * SpringWeb
@@ -20,6 +21,69 @@ Este projeto é um modelo para que você possa desenvolver sua primeira aplicaç
 * Projeto Lombok
 * H2 database
 * Postgres - configuração
+
+### Dependências
+
+Um projeto SpringBoot é formada por dependência denominadas de **starters** e o nosso projeto por ser uma API Rest especificante utilizará os starters citados no `pom.xml`
+
+```xml
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-test</artifactId>
+    <scope>test</scope>
+</dependency>
+
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-data-jpa</artifactId>
+</dependency>
+
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-web</artifactId>
+</dependency>
+```
+
+### Projeto Lombok
+
+O Lombok é uma biblioteca Java focada em produtividade e redução de código boilerplate que, por meio de anotações adicionadas ao nosso código, ensinamos o compilador (maven ou gradle) durante o processo de compilação a criar código Java.
+
+```xml
+<dependency>
+    <groupId>org.projectlombok</groupId>
+    <artifactId>lombok</artifactId>
+    <version>1.18.24</version>
+    <scope>provided</scope>
+</dependency>
+```
+
+### Persistência de dados
+
+O SpringBoot é facildade configurável a qualquer provedor de acesso a dados como H2Database, PostgreSQL, MySQL, SQLServer, Oracle Database entre outros, basta informar a biblioteca correspondente e configurar a sua conexão de bancos de dados no arquivo `resources/application.properties`.
+
+**Configurando o banco em memória H2Database**
+
+#### **`pom.xml`**
+```xml
+<dependency>
+    <groupId>org.projectlombok</groupId>
+    <artifactId>lombok</artifactId>
+    <version>1.18.24</version>
+    <scope>provided</scope>
+</dependency>
+```
+
+#### **`application.properties`**
+```xml
+<dependency>
+    <groupId>org.projectlombok</groupId>
+    <artifactId>lombok</artifactId>
+    <version>1.18.24</version>
+    <scope>provided</scope>
+</dependency>
+```
+
+
 
 ### Estrutura do projeto
 
