@@ -16,6 +16,6 @@ public class ClienteRequest {
     private LocalDate dataNascimento;
     @Schema(description="Renda mensal", example = "2456.87")
     private Double rendaMensal;
-    @Schema(description="Sexo do cliente", example = "2456.87")
+    @Schema(description="Sexo do cliente", example = "MASCULINO")
     private Sexo sexo;
 }

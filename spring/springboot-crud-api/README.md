@@ -150,4 +150,16 @@ Estando tudo certinho conforme logo abaixo, basta acessar o link: `http://localh
 ![image](https://github.com/glysns/backend-stater-kit/blob/main/spring/springboot-crud-api/src/main/resources/img/swagger-crud-cliente.png)
 
 
+### CRUD de Clientes
+
+Vamos realizar as operações básicas relacionadas em uma gestão de clientes:
+
+| Database | HTTP                  | Descrição                                                  |
+|----------|-----------------------|------------------------------------------------------------|
+| INSERT   | POST:/clientes        | Inclusão de um novo cliente                                |
+| UPDATE   | PUT:/clientes         | Alteraração do cliente cadastrado                          |
+| SELECT   | GET:/clientes/{id}    | Busca o cliente pelo ID informado                          |
+| DELETE   | DELETE:/clientes/{id} | Remove o cliente da base de dados pelo o ID correspondente |
+| SELECT   | GET:/clientes         | Lista todos os clientes na base de dados                   |
+
 
