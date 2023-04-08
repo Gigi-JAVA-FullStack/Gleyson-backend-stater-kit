@@ -31,7 +31,15 @@ public class ClienteResource {
     }
     @GetMapping()
     public List<ClienteResponse> listAll(){
-        return null;
+        return service.listAll();
+    }
+    @GetMapping("/{id}")
+    public ClienteResponse getOne(@PathVariable("id") Integer id){
+        return service.getOne(id);
+    }
+    @GetMapping("/{id}")
+    public void delete(@PathVariable("id") Integer id){
+        service.delete(id);
     }
 
 }
