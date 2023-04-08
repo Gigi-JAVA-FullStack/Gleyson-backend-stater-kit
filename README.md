@@ -20,5 +20,5 @@ Abaixo temos uma lista de projetos existentes na pasta `spring` onde exploramos 
 |Diretório|Recursos|Descrição|
 |----------|---------|-------|
 |[springboot-crud-api](https://github.com/glysns/backend-stater-kit/tree/main/spring/springboot-crud-api)|Projeto Web Modelo / Swagger / SpringDataJpa - H2 / Lombok / HTTP Rest |Modelo mínimo para qualquer projeto HTTP Rest utilizando SpringBoot capaz de interagir com um banco de dados em memória|
-|[springboot-crud-postgres-api](https://github.com/glysns/backend-stater-kit/tree/main/spring/springboot-crud-api)|Projeto HHTP Web Modelo conectado ao PostgreSQL |Modelo mínimo de um projeto HTTP Web conectado ao PostgreSQL.|
+|[springboot-crud-postgres-api](https://github.com/glysns/backend-stater-kit/tree/main/spring/springboot-crud-postgres-api)|Projeto HHTP Web Modelo conectado ao PostgreSQL |Modelo mínimo de um projeto HTTP Web conectado ao PostgreSQL.|
 
