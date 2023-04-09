@@ -26,12 +26,15 @@ O JSON Web Token é um padrão da Internet para a criação de dados com assinat
 
 Vamos começar pela criação dos pacotes `infra.security`, `infra.security.jwt` que terão o papel de agrupar classes que representam configurações e meios de autenticação em nossa aplicação no JWT:
 
-| Classe                           | Descrição                                                                                                                |
-|----------------------------------|--------------------------------------------------------------------------------------------------------------------------|
-| infra.security.Session           | Classe que representa a sessão de um usuário contendo o `username` e o `token`                                           |
-| infra.security.jwt.JwtObject     | Classe que representará o jwt-token para ser convertido em Json e vice-versa.                                            |
-| infra.security.jwt.JwtFactory    | Classe responsável por criar o jwt-token em forma objeto e string                                                        |
-| infra.security.jwt.JwtProperties | Classe que contém propriedades de `prefixo`, `chave privada` e `tempo de expiração` do token vindo do `application.properties` |
+| Classe                           | Descrição                                                                                                                      |
+|----------------------------------|--------------------------------------------------------------------------------------------------------------------------------|
+| infra.security.Login             | Classe que representa os parâmetros de `username` e  `password` de um usuário válido                                           |
+| infra.security.Session           | Classe que representa a sessão de um usuário contendo o `username` e o `token`                                                 |
+| infra.security.jwt.JwtObject     | Classe que representará o jwt-token para ser convertido em Json e vice-versa.                                                  |
+| infra.security.jwt.JwtFactory    | Classe responsável por criar o jwt-token em forma objeto e string                                                              |
+| infra.security.jwt.JwtProperties | Classe que contém propriedades de `prefixo`, `chave privada` do token vindo do `application.properties` |
+| infra.security.jwt.JwtFilter     | Classe que interceptará as requisições para converter e validar a estrutura do token recebido do Header.                       |
+| infra.security.WebSecurityConfig | Classe que contém a configuração que define a estratégia de autenticação e consumo dos recursos da api                         |
 
 ### Configuração
 
@@ -59,3 +62,14 @@ jwt.properties.key=MyKey
 ## 4 horas -> 60 x 60 x 4
 jwt.properties.expiration=14400
 ```
+
+### Criando o token
+
+Antes de pensar em consumir os recursos que agora estão seguros, precisaremos simular a criação de uma sessão com token com base em credencial `fake` passando o username e password. Ver implementação na classe `digytal.backend.api.webservice.LoginResource`.
+
+De acordo com as novas configurações teremos um novo endpoint `POST:/public/login` para primeiro realizar autenticação conforme Json abaixo:
+
+```json
+
+```
+

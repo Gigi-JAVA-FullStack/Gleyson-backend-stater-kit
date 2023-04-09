@@ -8,7 +8,6 @@ import org.springframework.context.annotation.Configuration;
 public class JwtProperties {
     public static String PREFIX;
     public static String KEY;
-    public static Long EXPIRATION;
 
     public void setPrefix(String prefix){
         PREFIX = prefix;
@@ -16,7 +15,5 @@ public class JwtProperties {
     public void setKey(String key){
         KEY = key;
     }
-    public void setExpiration(Long expiration){
-        EXPIRATION = expiration;
-    }
+
 }
