@@ -23,6 +23,7 @@ Abaixo temos uma lista de projetos existentes na pasta `spring` onde exploramos 
 |[springboot-crud-postgres-api](https://github.com/glysns/backend-stater-kit/tree/main/spring/springboot-crud-postgres-api)|Projeto HHTP Web Modelo conectado ao PostgreSQL |Modelo mínimo de um projeto HTTP Web conectado ao PostgreSQL.|
 |[springboot-crud-postgres-flyway-api](https://github.com/glysns/backend-stater-kit/tree/main/spring/springboot-crud-postgres-flyway-api)|Habilitando FlyWay Migrations com PostgreSQL |Habilitar o recurso de database migrations utilizando FlyWay e PostgreSQL|
 |[springboot-crud-exception-handler-api](https://github.com/glysns/backend-stater-kit/tree/main/spring/springboot-crud-exception-handler-api)|Projeto Web com implementação de Exception Handler |Projeto Web padronizando mensagens de sucesso ou de exceções|
+|[springboot-jwt-authentication](https://github.com/glysns/backend-stater-kit/tree/main/spring/springboot-jwt-authentication)|Projeto Web com implementação de autenticação com JWT |Habilitar as configurações de autenticação e segurança na aplicação|
 
 
 https://devkico.itexto.com.br/?p=3157
