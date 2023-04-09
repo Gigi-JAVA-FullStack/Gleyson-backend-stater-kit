@@ -34,5 +34,6 @@ Vamos começar pela criação dos pacotes `infra`,`infra.handler`, `infra.hanlde
 | infra.handler.GlobalExceptionHandler       | Classe que contém a configuração global que interceptará as nossas exceções de negócio.      |
 | infra.handler.exceptions.BusinessException | Classe que representa a mãe de todos os tipos de exceções de negócio da aplicação.           |
 | infra.handler.Response                     | Classe que representará as respostas de sucesso ou exceção diante das requisições do usuário |
+| infra.handler.ResponseFactory              | Classe que auxilia na criação das exceções de negócio como uma `Response`                      |
 
 > BusinessException ou Exceções de Negócio são classes que representam as exceções que uma aplicação poderá apresentar de acordo com interação do usuário.
