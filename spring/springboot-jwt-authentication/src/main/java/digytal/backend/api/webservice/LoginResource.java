@@ -31,7 +31,7 @@ public class LoginResource {
             session.setToken(JwtFactory.create(JwtProperties.PREFIX, JwtProperties.KEY, jwtObject));
             return ResponseFactory.ok(session,"Login realizado com sucesso");
         }else{
-            return ResponseFactory.exception(new BusinessException("Usuário Inválido","403","Confirma seu usuário e senha"));
+            throw new BusinessException("Usuário Inválido","403","Confirma seu usuário e senha");
         }
     }
 }

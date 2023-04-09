@@ -59,8 +59,6 @@ Vamos começar pela criação dos pacotes `infra.security`, `infra.security.jwt`
 ## Parametros de configuracao do Token
 jwt.properties.prefix=Bearer
 jwt.properties.key=MyKey
-## 4 horas -> 60 x 60 x 4
-jwt.properties.expiration=14400
 ```
 
 ### Criando o token
@@ -69,7 +67,38 @@ Antes de pensar em consumir os recursos que agora estão seguros, precisaremos s
 
 De acordo com as novas configurações teremos um novo endpoint `POST:/public/login` para primeiro realizar autenticação conforme Json abaixo:
 
+![image](https://github.com/glysns/backend-stater-kit/blob/main/spring/springboot-crud-api/src/main/resources/img/login.png)
 ```json
+{
+  "username": "gleyson",
+  "password": "Jwt@123"
+}
+```
 
+*Resposta - OK*
+```json
+{
+    "dateTime": "2023-04-09 09:57:07",
+    "success": true,
+    "message": "Login realizado com sucesso",
+    "code": "200",
+    "body": {
+    "username": "gleyson",
+    "token": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJnbGV5c29uIiwiaWF0IjoxNjgxMDQ1MDI3LCJleHAiOjE2ODEwNTk0MjcsImF1dGhvcml0aWVzIjpbIlJPTEVfVVNFUl9BRE1JTiJdfQ.EncVeV-H1nm2ug9-lllGmVR_cK71u6yNZjaQJHyPzhBqEH9NMKeFlUGH_kaSr1J_DP3TRzV77_C7y1-dBL2oxA"
+    },
+    "suggestion": ""
+}
+```
+
+*OU - Resposta - Erro*
+```json
+{
+    "dateTime": "2023-04-09 09:59:29",
+    "success": false,
+    "message": "Usuário Inválido",
+    "code": "403",
+    "body": null,
+    "suggestion": "Confirma seu usuário e senha"
+}
 ```
 
