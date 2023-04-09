@@ -27,7 +27,6 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler  {
             Class<? extends Throwable> exceptionClass = exception.getUndeclaredThrowable().getClass();
             return handleBusinessException((BusinessException) exception.getUndeclaredThrowable(), request);
         } else {
-            // message = messageSource.getMessage("error.server", new Object[]{e.getMessage()}, null);
 
             Response error = ResponseFactory.error(HttpStatus.INTERNAL_SERVER_ERROR.value(), "Erro não catalogado", "Contacte o administrador do sistema");
             HttpHeaders headers = new HttpHeaders();
@@ -38,10 +37,11 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler  {
     }
     @ExceptionHandler({BusinessException.class})
     private ResponseEntity<Object> handleBusinessException(BusinessException be, WebRequest request) {
+
         Response error = ResponseFactory.error(be.getErrorCode(), be.getMessage(), be.getSuggestion());
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
-        ResponseEntity response = handleExceptionInternal(be, error, headers, HttpStatus.resolve(be.getHttpStatus()), request);
+        ResponseEntity response = handleExceptionInternal(be, error, headers, HttpStatus.CONFLICT, request);
 
         return response;
     }
