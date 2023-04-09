@@ -24,12 +24,12 @@ public class ClienteResource {
     private ClienteRepository repository;
 
     @PostMapping
-    public void post(@RequestBody ClienteRequest request){//aqui deveria ter o seu DTO
-        service.save(request);
+    public Response post(@RequestBody ClienteRequest request){//aqui deveria ter o seu DTO
+        return ResponseFactory.ok(service.save(request),"Cliente salvo com sucesso");
     }
     @PutMapping("/{id}")
-    public void put(@PathVariable("id") Integer id, @RequestBody ClienteRequest request){
-        service.update(id,request);
+    public Response put(@PathVariable("id") Integer id, @RequestBody ClienteRequest request){
+        return ResponseFactory.ok(service.save(request),"Cliente alterado com sucesso");
     }
     @GetMapping()
     public List<ClienteResponse> listAll(){
@@ -41,8 +41,8 @@ public class ClienteResource {
         return ResponseFactory.okOrNotFound(repository.findById(id));
     }
     @DeleteMapping("/{id}")
-    public void delete(@PathVariable("id") Integer id){
-        service.delete(id);
+    public Response delete(@PathVariable("id") Integer id){
+        return ResponseFactory.ok(service.delete(id),"Cliente excluído com sucesso");
     }
 
 }

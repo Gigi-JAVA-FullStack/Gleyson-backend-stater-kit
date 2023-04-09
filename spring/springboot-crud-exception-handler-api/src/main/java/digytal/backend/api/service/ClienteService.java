@@ -1,5 +1,6 @@
 package digytal.backend.api.service;
 
+import digytal.backend.api.infra.handler.exceptions.CampoObrigatorioException;
 import digytal.backend.api.infra.handler.exceptions.RegistroNaoLocalizadoException;
 import digytal.backend.api.model.cliente.ClienteEntity;
 import digytal.backend.api.model.cliente.ClienteRequest;
@@ -18,18 +19,19 @@ public class ClienteService {
     @Autowired
     private ClienteRepository repository;
     //PrePersist
-    public void save(ClienteRequest request){
+    public Integer save(ClienteRequest request){
         //chamando o método da propria classe para cuidar em persistir no banco de dados
-        this.persist(null, request);
+        return this.persist(null, request);
     }
     //PreUpdate
-    public void update(Integer id, ClienteRequest request){
+    public Integer update(Integer id, ClienteRequest request){
         //chamando o método da propria classe para cuidar em persistir no banco de dados
-        this.persist(id, request);
+        return this.persist(id, request);
     }
-    public void delete(Integer id){
+    public boolean delete(Integer id){
        ClienteEntity entity = findById(id);
        repository.delete(entity);
+       return true;
     }
     public ClienteResponse getOne(Integer id){
         ClienteEntity entity = findById(id);
@@ -56,6 +58,13 @@ public class ClienteService {
 
     @Transactional
     public Integer persist(Integer id, ClienteRequest request){
+
+        if(request.getNome()==null || request.getNome().isEmpty())
+            throw new CampoObrigatorioException("Nome");
+
+        if(request.getCpf()==null || request.getCpf().isEmpty())
+            throw new CampoObrigatorioException("CPF");
+
         ClienteEntity entity = null;
         if(id!=null){
             entity = this.findById(id); //este noo método tem o mesmo do repositório mas observe a lógica aplicada
