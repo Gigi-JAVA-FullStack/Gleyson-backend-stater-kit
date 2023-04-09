@@ -102,3 +102,10 @@ De acordo com as novas configurações teremos um novo endpoint `POST:/public/lo
 }
 ```
 
+### Gran finale
+
+Agora precisaremos dizer ao swagger que o mesmo deverá possibilitar incluir o token que foi gerado na chamada da requisição de login, ver configuração na classe `infra.doc.OpenAPI30Configuration`
+
+![image](https://github.com/glysns/backend-stater-kit/blob/main/spring/springboot-crud-api/src/main/resources/img/token.png)
+
+Cole o token gerado anteriormente: `Bearer eyJhbGciOiJIUz ...`
