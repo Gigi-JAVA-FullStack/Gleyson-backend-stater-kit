@@ -26,4 +26,5 @@ Abaixo temos uma lista de projetos existentes na pasta `spring` onde exploramos 
 |[springboot-jwt-authentication](https://github.com/glysns/backend-stater-kit/tree/main/spring/springboot-jwt-authentication)|Projeto Web com implementação de autenticação com JWT |Habilitar as configurações de autenticação e segurança na aplicação|
 
 
+
 https://devkico.itexto.com.br/?p=3157
