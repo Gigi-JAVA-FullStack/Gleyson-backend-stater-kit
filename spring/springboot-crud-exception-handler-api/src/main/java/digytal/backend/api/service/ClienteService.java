@@ -1,5 +1,6 @@
 package digytal.backend.api.service;
 
+import digytal.backend.api.infra.handler.exceptions.RegistroNaoLocalizadoException;
 import digytal.backend.api.model.cliente.ClienteEntity;
 import digytal.backend.api.model.cliente.ClienteRequest;
 import digytal.backend.api.model.cliente.ClienteResponse;
@@ -50,7 +51,7 @@ public class ClienteService {
         return list;
     }
     private ClienteEntity findById(Integer id){
-        return repository.findById(id).orElseThrow(() -> new RuntimeException("Não foi possível localizar o cliente com o ID " + id));
+        return repository.findById(id).orElseThrow(() -> new RegistroNaoLocalizadoException("Cliente", "ID"));
     }
 
     @Transactional

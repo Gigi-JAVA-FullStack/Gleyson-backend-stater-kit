@@ -10,17 +10,8 @@ public class ResponseFactory {
     public static Response okOrNotFound(Object value) {
         return okOrNotFound(value, "Registro localizado com sucesso");
     }
-    public static Response okOrNotFound(Optional optional) {
-        return okOrNotFound(optional,"Registro localizado com sucesso");
-    }
-    public static Response okOrNotFound(Optional optional, String message) {
-        if(optional.isPresent())
-            return ok(optional.get(),message) ;
-        else
-            throw new RegistroNaoLocalizadoException("Registro","campo");
-    }
     public static Response okOrNotFound(Object value, String message) {
-        RegistroNaoLocalizadoException exception = new RegistroNaoLocalizadoException();
+        RegistroNaoLocalizadoException exception = new RegistroNaoLocalizadoException("Registro","Campo");
         Optional.ofNullable(value).orElseThrow(() -> exception );
         return ok(value,message) ;
     }

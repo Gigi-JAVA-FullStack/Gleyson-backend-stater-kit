@@ -1,5 +1,7 @@
 package digytal.backend.api.webservice;
 
+import digytal.backend.api.infra.handler.Response;
+import digytal.backend.api.infra.handler.ResponseFactory;
 import digytal.backend.api.model.cliente.ClienteRequest;
 import digytal.backend.api.model.cliente.ClienteResponse;
 import digytal.backend.api.repository.ClienteRepository;
@@ -34,8 +36,9 @@ public class ClienteResource {
         return service.listAll();
     }
     @GetMapping("/{id}")
-    public ClienteResponse getOne(@PathVariable("id") Integer id){
-        return service.getOne(id);
+    public Response getOne(@PathVariable("id") Integer id){
+        Object response = service.getOne(id);
+        return ResponseFactory.okOrNotFound(repository.findById(id));
     }
     @DeleteMapping("/{id}")
     public void delete(@PathVariable("id") Integer id){
