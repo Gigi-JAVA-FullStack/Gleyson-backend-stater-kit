@@ -1,15 +1,14 @@
-# Digytal Code - Programação, Pesquisa e Educação
+# Digytal - Programação, Pesquisa e Educação
 [www.digytal.com.br](http://www.digytal.com.br)
 
 [(11) 95894-0362](https://api.whatsapp.com/send?phone=5511958940362)
-
 
 #### Autores
 - [Gleyson Sampaio](https://github.com/glysns)
 
 ## BackEnd - StarterKit - Spring CRUD Api
 
-Este projeto é um modelo para que você possa desenvolver sua primeira aplicação com SpringBoot para provê uma API de cadastro de clientes realiazando as operações de inclusão, alteração, busca e listagem de dados de clientes.
+Este projeto é um modelo para que você possa desenvolver sua primeira aplicação com SpringBoot para provê uma API de cadastro de clientes realizando as operações de inclusão, alteração, busca e listagem de dados de clientes.
 
 ### Tecnologias
 
@@ -25,7 +24,7 @@ Este projeto é um modelo para que você possa desenvolver sua primeira aplicaç
 
 ### Dependências
 
-Um projeto SpringBoot é formada por dependência denominadas de **starters** e o nosso projeto por ser uma API Rest especificante utilizará os starters citados no `pom.xml`
+Um projeto SpringBoot é formado por dependência denominadas de **starters** e o nosso projeto por ser uma API Rest especificamente utilizará os starters citados no `pom.xml`
 
 ```xml
 <dependency>
@@ -58,9 +57,11 @@ O Lombok é uma biblioteca Java focada em produtividade e redução de código b
 </dependency>
 ```
 
+>Este recurso deve usado com muita conciência e aplicabilidade
+
 #### Persistência de dados
 
-O SpringBoot é facildade configurável a qualquer provedor de acesso a dados como H2Database, PostgreSQL, MySQL, SQLServer, Oracle Database entre outros, basta informar a biblioteca correspondente e configurar a sua conexão de bancos de dados no arquivo `resources/application.properties`.
+O SpringBoot é facilmente configurável a qualquer provedor de acesso a dados como H2 Database, PostgreSQL, MySQL, SQLServer, Oracle Database entre outros, basta informar a biblioteca correspondente e configurar a sua conexão de bancos de dados no arquivo `resources/application.properties`.
 
 *Configurando o banco em memória H2Database*
 
@@ -120,13 +121,13 @@ O pacote principal é `digytal.backend.api`.
 | enums      | pacote que contém os enums do sistema                                                          |
 | model      | pacote que contém as classes de modelo do sistema (entidades e dtos)                           |
 | repository | pacote que contém as interfaces responsáveis pela persistência de cada entidade correspondente |
-| service    | pacote que contém as classes responsáveis por gerencias as regras de negóicio da aplicação.    |
-| webservice | pacote que contém as classes que representam os recursos https disponíveis pela aplivação      |
+| service    | pacote que contém as classes responsáveis por gerenciar as regras de negóicio da aplicação    |
+| webservice | pacote que contém as classes que representam os recursos https disponíveis pela aplicação      |
 
 ### Model
 
 As aplicações costumam separar a camada de domínio (Entity) com a camada de transferência de dados (DTO) para manter a segurança no que se refere ao acesso à dados.
-Para implementar nosso projeto seguindo esta diretriz, organizando a nossa camada de modelo contendo três arquivos comuns para cada entidade da aplicação.
+Para implementar nosso projeto seguindo esta diretriz, organizamos a nossa camada de modelo contendo três arquivos comuns para cada entidade da aplicação.
 
 * Entity - Classe mapeada com JPA para representar uma tabela no banco de dados
 * Request - Classe que será utilizada para realizar operações de inclusão e alteração de registros
@@ -134,9 +135,9 @@ Para implementar nosso projeto seguindo esta diretriz, organizando a nossa camad
 
 ### Executando a aplicação
 
-Para executar a aplicação é simples, basta abrir a classe `SpringbootCrudApiApplication` e ativar  `run` ou `debug` em sua ide.
+Para executar a aplicação é simples, basta abrir a classe `SpringbootCrudApiApplication` e ativar  `run` ou `debug` em sua IDE.
 
-Estando tudo certinho conforme logo abaixo, basta acessar o link: `http://localhost:8080/swagger-ui/index.html`
+Estando tudo certinho conforme log abaixo, basta acessar o link: `http://localhost:8080/swagger-ui/index.html`
 
 ```shell
 2023-04-08 13:08:56.368  INFO 20680 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
