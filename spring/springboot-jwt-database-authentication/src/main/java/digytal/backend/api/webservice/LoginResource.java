@@ -8,8 +8,10 @@ import digytal.backend.api.infra.security.Session;
 import digytal.backend.api.infra.security.jwt.JwtFactory;
 import digytal.backend.api.infra.security.jwt.JwtObject;
 import digytal.backend.api.infra.security.jwt.JwtProperties;
+import digytal.backend.api.model.usuario.UsuarioEntity;
 import digytal.backend.api.repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,11 +23,21 @@ public class LoginResource {
 
     @Autowired
     private UsuarioRepository repository;
+
+    @Autowired
+    private PasswordEncoder encoder;
     @PostMapping("/login")
     public Response login(@RequestBody Login login){
-        if(login.getUsername().equals("gleyson") && login.getPassword().equals("Jwt@123") ){
+        final BusinessException usuarioInvalidoException =  new BusinessException("Usuário Inválido","403","Confirma seu usuário e senha");
+        UsuarioEntity entity = repository.findByLogin(login.getUsername());
+        if(entity!=null ){
             Session session = new Session();
             session.setUsername(login.getUsername());
+
+            boolean senhaValida = encoder.matches(login.getPassword(), entity.getSenha());
+
+            if(!senhaValida)
+                throw usuarioInvalidoException;
 
             JwtObject jwtObject = JwtObject.builder()
                     .subject(login.getUsername())
@@ -36,7 +48,7 @@ public class LoginResource {
             session.setToken(JwtFactory.create(JwtProperties.PREFIX, JwtProperties.KEY, jwtObject));
             return ResponseFactory.ok(session,"Login realizado com sucesso");
         }else{
-            throw new BusinessException("Usuário Inválido","403","Confirma seu usuário e senha");
+            throw usuarioInvalidoException;
         }
     }
 }

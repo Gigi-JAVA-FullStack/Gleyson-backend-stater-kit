@@ -39,7 +39,7 @@ Precisaremos agora gravar o nosso usuário considerando que a senha será primei
 
 3. Refatorando o Login
 
-Agora para realizar o login, o nosso usuário será localizado na base de dados e comparado a senha que foi armazenada anteriormente.
+Agora para realizar o login, o nosso usuário será localizado na base de dados e comparado a senha que foi armazenada anteriormente, ver classe `webservice.LoginResource`
 
 
 
