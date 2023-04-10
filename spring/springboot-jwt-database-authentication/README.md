@@ -1,4 +1,4 @@
-# Digytal Code - Programação, Pesquisa e Educação
+# Digytal - Programação, Pesquisa e Educação
 [www.digytal.com.br](http://www.digytal.com.br)
 
 [(11) 95894-0362](https://api.whatsapp.com/send?phone=5511958940362)
@@ -16,7 +16,7 @@ Este projeto tem por finalidade implementar uma camada de autenticação utiliza
 * Spring Security
 * JWT
 * Password Encoder
-* PostreSQL
+* PostgreSQL
 
 
 ### Refatoração
