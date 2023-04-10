@@ -30,7 +30,12 @@ Com base no projeto anterior `springboot-jwt-authentication`, precisamos agora r
 
 1. Usuário
 
-Nossa primeira missão será criar a nossa entidade que representará um usuário no sistema com seu respectivo dto ou request, ver classes do pacote `model.usuario`.
+Nossa primeira missão será criar a nossa entidade que representará um usuário no sistema com seu respectivo `dto`, `request` e `repository`, ver classes do pacote `model.usuario`.
+
+
+2. Gravar Usuário
+
+Precisaremos agora gravar o nosso usuário considerando que a senha será primeiramente criptograda e salva no banco de dados. Vamos usar uma classe de criptografia disponibilizada pelo String e configurada na classe `infra.security.WebSecurityConfig` através da implementação desenvolvida na nova classe `service.UsuarioService`.
 
 
 
