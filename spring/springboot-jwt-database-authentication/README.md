@@ -7,24 +7,26 @@
 #### Autores
 - [Gleyson Sampaio](https://github.com/glysns)
 
-## BackEnd - StarterKit - Spring JWT Authentication - Api
+## BackEnd - StarterKit - Spring JWT Database Authentication - Api
 
-Este projeto tem por finalidade implementar uma camada de autenticação utilizando Spring Security e JWT.
+Este projeto tem por finalidade implementar uma camada de autenticação utilizando Spring Security e JWT obtendo dados usuário armazenado em um banco de dados.
 
 ### Tecnologias
 
 * Spring Security
 * JWT
+* Password Encoder
+* PostreSQL
 
-A autenticação é um processo de segurança para verificar a veracidade e autenticidade de uma pessoa ou objeto. O tema da autenticação de um indivíduo, entidade ou objeto não é algo novo, dado que a palavra "autêntico" vem do grego "authentikos", que significa "original, genuíno". Portanto, a autenticação é baseada na comparação e correspondência para determinar se algo ou alguém é, de fato, o que ou quem afirmam ser.
 
-### JWT
+### Refatoração
+Com base no projeto anterior `springboot-jwt-authentication`, precisamos agora realizar dois procedimentos:
 
-O JSON Web Token é um padrão da Internet para a criação de dados com assinatura opcional e/ou criptografia cujo payload contém o JSON que afirma algum número de declarações. Os tokens são assinados usando um segredo privado ou uma chave pública/privada
+1. Criar a entidade que representará o usuário que será armazenado no banco de dados;
+2. Criar um novo script.sql que realizará a criação da tabela de usuário e a inseração de um usuário padrão, ver `V01_03__create_tab_usuario.sql`;
+3. Criar uma classe utilitária que consiga criptografar uma senha e depois compará-la no momento do login, ver `api.infra.util.PasswordEncoderUtil`
+4. Refatorar a operação de login de forma que agora os dados de usuário e senha estejam localizadas no banco de dados.
 
-### Infraestrutura
-
-Vamos começar pela criação dos pacotes `infra.security`, `infra.security.jwt` que terão o papel de agrupar classes que representam configurações e meios de autenticação em nossa aplicação no JWT:
 
 | Classe                           | Descrição                                                                                                                      |
 |----------------------------------|--------------------------------------------------------------------------------------------------------------------------------|
