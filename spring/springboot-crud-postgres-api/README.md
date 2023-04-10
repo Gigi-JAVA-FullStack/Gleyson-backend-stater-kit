@@ -1,4 +1,4 @@
-# Digytal Code - Programação, Pesquisa e Educação
+# Digytal - Programação, Pesquisa e Educação
 [www.digytal.com.br](http://www.digytal.com.br)
 
 [(11) 95894-0362](https://api.whatsapp.com/send?phone=5511958940362)
@@ -15,7 +15,7 @@ Este projeto é uma evolução do projeto [springboot-crud-api](https://github.c
 
 * PostgreSQL
 * PGAdmin
-* ou Debeaver
+* ou DBeaver
 
 ### Configuração
 
@@ -43,7 +43,7 @@ spring.datasource.password=postgres
 
 > Observe que o banco de dados foi instalado na porta `5432` com usuário `postgres` e senha `postgres` e o `database` que iremos conectar se chamara `crud-api`. Confirme previamente a sua conexão com banco utilizando as ferramentas PGAdmin ou DBeaver. 
 
-O SpringBootDataJpa proporciona uma configuração adicional para bancos de dados que não são em memória, você pode decidir se as tabelas serão criadas/atualmente ou não.
+O SpringBootDataJpa proporciona uma configuração adicional para bancos de dados que não são em memória, você pode decidir se as tabelas serão criadas/atualizadas ou não.
 
 #### **`application.properties`**
 ```

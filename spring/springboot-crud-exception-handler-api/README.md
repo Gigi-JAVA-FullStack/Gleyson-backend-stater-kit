@@ -7,7 +7,7 @@
 #### Autores
 - [Gleyson Sampaio](https://github.com/glysns)
 
-## BackEnd - StarterKit - Spring CRUD Postgres - Flyway - Api
+## BackEnd - StarterKit - Spring Rest API - Exception Handler
 
 Este projeto é uma evolução do projeto [springboot-crud-postgres-flyway-api](https://github.com/glysns/backend-stater-kit/tree/main/spring/springboot-crud-postgres-flyway-api) para ilustrar o tratamento de exceções como respostas customizadas para o usuário em requisições HTTP Rest no formato JSON.
 
