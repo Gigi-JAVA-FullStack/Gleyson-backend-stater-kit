@@ -21,6 +21,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/public")
 public class LoginResource {
 
+    public static final BusinessException USUARIO_INVALIDO_EXCEPTION = new BusinessException("Usuário Inválido","403","Confirma seu usuário e senha");
     @Autowired
     private UsuarioRepository repository;
 
@@ -28,7 +29,6 @@ public class LoginResource {
     private PasswordEncoder encoder;
     @PostMapping("/login")
     public Response login(@RequestBody Login login){
-        final BusinessException usuarioInvalidoException =  new BusinessException("Usuário Inválido","403","Confirma seu usuário e senha");
         UsuarioEntity entity = repository.findByLogin(login.getUsername());
         if(entity!=null ){
             Session session = new Session();
@@ -37,7 +37,7 @@ public class LoginResource {
             boolean senhaValida = encoder.matches(login.getPassword(), entity.getSenha());
 
             if(!senhaValida)
-                throw usuarioInvalidoException;
+                throw USUARIO_INVALIDO_EXCEPTION;
 
             JwtObject jwtObject = JwtObject.builder()
                     .subject(login.getUsername())
@@ -48,7 +48,7 @@ public class LoginResource {
             session.setToken(JwtFactory.create(JwtProperties.PREFIX, JwtProperties.KEY, jwtObject));
             return ResponseFactory.ok(session,"Login realizado com sucesso");
         }else{
-            throw usuarioInvalidoException;
+            throw USUARIO_INVALIDO_EXCEPTION;
         }
     }
 }
