@@ -35,7 +35,11 @@ Nossa primeira missão será criar a nossa entidade que representará um usuári
 
 2. Gravar Usuário
 
-Precisaremos agora gravar o nosso usuário considerando que a senha será primeiramente criptograda e salva no banco de dados. Vamos usar uma classe de criptografia disponibilizada pelo String e configurada na classe `infra.security.WebSecurityConfig` através da implementação desenvolvida na nova classe `service.UsuarioService` e seu controller.
+Precisaremos agora gravar o nosso usuário considerando que a senha será primeiramente criptograda e salva no banco de dados. Vamos usar uma classe de criptografia disponibilizada pelo String e configurada na classe `infra.security.WebSecurityConfig` através da implementação desenvolvida na nova classe `service.UsuarioService` e seu controller `webservice.UsuarioResource`.
+
+3. Refatorando o Login
+
+Agora para realizar o login, o nosso usuário será localizado na base de dados e comparado a senha que foi armazenada anteriormente.
 
 
 

@@ -11,7 +11,7 @@ public class UsuarioRequest {
     @Schema(description="Nome do usuario", example = "GLEYSON SAMPAIO")
     private String nome;
 
-    @Schema(description="Login", example = "gleyson")
+    @Schema(description="Login", example = "izabelly")
     private String login;
 
     @Schema(description="Senha", example = "Jwt@123")
