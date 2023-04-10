@@ -1,10 +1,7 @@
-create table tab_cliente
+create table tab_usuario
 (
-    id            serial
-        primary key,
-    cpf           varchar(15)      not null,
-    dt_nascimento date             not null,
+    id            serial primary key,
     nome          varchar(50)      not null,
-    renda_mensal  double precision not null,
-    sexo          varchar(10)      not null
+    login         varchar(20)      not null,
+    senha         varchar(100)      not null,
 );
