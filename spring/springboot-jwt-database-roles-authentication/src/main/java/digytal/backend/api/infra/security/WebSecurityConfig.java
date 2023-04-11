@@ -3,6 +3,7 @@ package digytal.backend.api.infra.security;
 import digytal.backend.api.infra.security.jwt.JwtFilter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -33,6 +34,12 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 //.antMatchers("/h2-console/**").permitAll()
                 //public api
                 .antMatchers("/public/**").permitAll()
+
+                .antMatchers(HttpMethod.DELETE,"/clientes").hasAnyRole("MANAGER")
+
+                .antMatchers(HttpMethod.POST,"/clientes").hasAnyRole("MANAGER","USER")
+                .antMatchers(HttpMethod.GET,"/clientes").hasAnyRole("MANAGER","USER")
+                .antMatchers(HttpMethod.PUT,"/clientes").hasAnyRole("MANAGER","USER")
 
                 .anyRequest().authenticated()
                 .and()

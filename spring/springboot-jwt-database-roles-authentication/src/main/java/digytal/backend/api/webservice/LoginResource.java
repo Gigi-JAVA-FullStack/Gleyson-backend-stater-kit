@@ -43,7 +43,7 @@ public class LoginResource {
                     .subject(login.getUsername())
                     .issuedAt()
                     .expirationHours(4)
-                    .roles("USER_ADMIN");
+                    .roles(entity.getRole()==null?"USER":entity.getRole());
 
             session.setToken(JwtFactory.create(JwtProperties.PREFIX, JwtProperties.KEY, jwtObject));
             return ResponseFactory.ok(session,"Login realizado com sucesso");

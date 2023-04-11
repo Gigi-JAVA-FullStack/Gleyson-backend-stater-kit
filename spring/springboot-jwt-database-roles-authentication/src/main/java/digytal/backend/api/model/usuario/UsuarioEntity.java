@@ -20,4 +20,5 @@ public class UsuarioEntity {
     private String nome;
     private String login;
     private String senha;
+    private String role;
 }

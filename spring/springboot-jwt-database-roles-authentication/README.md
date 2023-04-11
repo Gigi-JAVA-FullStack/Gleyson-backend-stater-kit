@@ -49,6 +49,33 @@ username = admin, password = M@nager, role = MANAGER
 
 >Ver nova migration `V01_04__alter_tab_usuario_add_role.sql`
 
+### Refatoração
+
+Foram realizados alguns ajustes em nossa aplicação para considerar a verificação do perfil do usuário.
+
+* Nossa classe `model.usuario.UsuarioEntity` terá um novo atributo denominado de `role`;
+* Na classe `api.webservice.LoginResource` agora ao gerar o token pegamos o perfil do usuário de acordo com o cadastro, linha 46.
+
+Ao realizar um novo login você poderá analisar o token que foi gerado utilizando o site https://jwt.io/.
+
+### Autorização
+
+Quanto realizamos o login com sucesso nos autenticamos em nossa API através do token que foi gerado, mas será se o meu perfil terá permissão de acessar todos os recursos disponíveis?
+
+Vamos imaginar que, somente um usuário com perfil (role) `MANAGER` poderá realizar a exclusão de um cliente?
+
+Veja a alteração realizada na classe `infra.security.WebSecurityConfig`.
+
+
+```java
+.antMatchers(HttpMethod.DELETE,"/clientes").hasAnyRole("MANAGER")
+                
+.antMatchers(HttpMethod.POST,"/clientes").hasAnyRole("MANAGER","USER")
+.antMatchers(HttpMethod.GET,"/clientes").hasAnyRole("MANAGER","USER")
+.antMatchers(HttpMethod.PUT,"/clientes").hasAnyRole("MANAGER","USER")
+```
+
+>Para casos que necessitem de um contexto mais avançado é super válido alinhar uma melhor estratégia envolvendo todo o time.
 
 **Referências**
 
