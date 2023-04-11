@@ -18,3 +18,35 @@ Este projeto tem por finalidade implementar uma camada de autenticação utiliza
 * Password Encoder
 * PostgreSQL
 * Perfil de Acesso (Roles)
+
+### Autenticação
+
+A autenticação verifica a identidade digital do usuário, ou seja, processo de verificação de uma identidade. Em termos mais simples, é quando o usuário prova de fato quem ele é.
+
+Um exemplo bem comum de autenticação é a combinação Username e Password (Usuário e senha).
+
+### Autorização
+
+Por sua vez, a autorização é o processo que ocorre após ser validada a autenticação. Diz respeito aos privilégios que são concedidos a determinado usuário ao utilizar uma aplicação.
+
+Serve para verificar se determinado usuário terá a permissão para utilizar, executar recursos ou manipular determinadas ações, que é de fundamental importância dentro de uma aplicação.
+
+Um exemplo que podemos atribuir a autorização é o uso de um ERP de uma determinada empresa.
+
+Após realizar a autenticação no sistema, o usuário do financeiro terá acesso apenas aos módulos correspondentes à realização de seu trabalho, como contas a pagar, contas a receber, etc.
+
+### Roles
+
+Role é uma definição de perfil ou grupo de usuário que determina os recursos autorizados para serem acessados por um usuário.
+
+No contexto iremos utilizar dois usuarios com os repectivos perfís (role):
+
+```
+username = user,password = UserP@ss, role = USER
+
+username = admin, password = M@nager, role = MANAGER
+```
+
+**Referências**
+
+https://www.treinaweb.com.br/blog/autenticacao-x-autorizacao
