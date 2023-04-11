@@ -86,3 +86,6 @@ Veja a alteração realizada na classe `infra.security.WebSecurityConfig`.
 **Referências**
 
 https://www.treinaweb.com.br/blog/autenticacao-x-autorizacao
+
+Acabamos de liberar um exemplo de como configurar segurança a nível de autenticação e autorização utilizando Spring Boot.
+Confira no link : https://github.com/glysns/backend-stater-kit/tree/main/spring/springboot-jwt-database-roles-authentication
