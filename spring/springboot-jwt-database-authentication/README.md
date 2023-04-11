@@ -9,7 +9,7 @@
 
 ## BackEnd - StarterKit - Spring JWT Database Authentication - Api
 
-Este projeto tem por finalidade implementar uma camada de autenticação utilizando Spring Security e JWT obtendo dados usuário armazenado em um banco de dados.
+Este projeto tem por finalidade implementar uma camada de autenticação utilizando Spring Security e JWT obtendo dados usuário armazenado em um banco de dados. Ver projeto inicial em [springboot-jwt-authentication](https://github.com/glysns/backend-stater-kit/tree/main/spring/springboot-jwt-authentication).
 
 ### Tecnologias
 
