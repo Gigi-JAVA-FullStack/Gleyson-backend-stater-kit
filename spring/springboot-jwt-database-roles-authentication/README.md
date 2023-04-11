@@ -68,11 +68,17 @@ Veja a alteração realizada na classe `infra.security.WebSecurityConfig`.
 
 
 ```java
-.antMatchers(HttpMethod.DELETE,"/clientes").hasAnyRole("MANAGER")
+.antMatchers(HttpMethod.DELETE,"/clientes/**").hasAnyRole("MANAGER")
                 
 .antMatchers(HttpMethod.POST,"/clientes").hasAnyRole("MANAGER","USER")
 .antMatchers(HttpMethod.GET,"/clientes").hasAnyRole("MANAGER","USER")
 .antMatchers(HttpMethod.PUT,"/clientes").hasAnyRole("MANAGER","USER")
+```
+
+**NOTA:** Ao tentar excluir um cliente com o token gerado de um usuário perfil `USER`, você não deverá ter permissão.
+
+```
+403 Forbidden (Proibido) 
 ```
 
 >Para casos que necessitem de um contexto mais avançado é super válido alinhar uma melhor estratégia envolvendo todo o time.
