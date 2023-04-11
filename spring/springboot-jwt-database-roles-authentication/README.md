@@ -47,6 +47,9 @@ username = user,password = UserP@ss, role = USER
 username = admin, password = M@nager, role = MANAGER
 ```
 
+>Ver nova migration `V01_04__alter_tab_usuario_add_role.sql`
+
+
 **Referências**
 
 https://www.treinaweb.com.br/blog/autenticacao-x-autorizacao
