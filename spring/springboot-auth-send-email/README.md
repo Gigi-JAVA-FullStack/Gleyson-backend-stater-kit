@@ -9,12 +9,41 @@
 
 ## BackEnd - StarterKit - Spring Send Email - Api
 
-Este projeto tem por finalidade implementar uma camada de autenticação utilizando Spring Security e JWT obtendo dados usuário armazenado em um banco de dados e aplicando regras de perfis de acesso (roles). Ver projeto inicial em [springboot-jwt-database-authentication](https://github.com/glysns/backend-stater-kit/tree/main/spring/springboot-jwt-database-authentication).
+Este projeto tem por finalidade implementar o envio de e-mail contendo a senha padrão dos usuários do sistemas. Ver projeto inicial em [springboot-jwt-database-roles-authentication](https://github.com/glysns/backend-stater-kit/tree/main/spring/springboot-jwt-database-roles-authentication).
 
 ### Tecnologias
 
 * Spring Security
-* JWT
-* Password Encoder
-* PostgreSQL
-* Perfil de Acesso (Roles)
+* Spring Email
+* G-Mail
+
+## Configuração
+
+Habilitar o envio de e-mail pelo SpringBoot integrando ao G-Mail hoje é uma tarefa bem simples, siga as instruções abaixo:
+
+1. Adicione a dependência (starter) do `spring-boot-starter-mail`
+
+#### **`pom.xml`**
+```xml
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-mail</artifactId>
+</dependency>
+```
+
+2. Configure as propriedades para envio de e-mail
+
+#### **`application.properties`**
+```shell
+spring.mail.host=smtp.gmail.com
+spring.mail.port=587
+spring.mail.username=gleyson@digytal.com.br
+spring.mail.password=** SUA_SENHA **
+spring.mail.properties.mail.smtp.auth=true
+spring.mail.properties.mail.smtp.starttls.enable=true
+spring.mail.properties.mail.smtp.starttls.required=true
+spring.mail.properties.mail.smtp.ssl.enable=false
+spring.mail.test-connection=false
+```
+
+>Duas observações em relação a configuração acima, primeira seu e-mail e senha **NÃO PODEM** estar diretamente no `application.properties` e sim na configuração de seu servidor ou container e o G-Mail recomanda **NÃO USAR** sua senha pessoal, mas sim criar uma senha para esta finalidade em específica.
