@@ -36,7 +36,7 @@ public class UsuarioService {
 
         //uma senha temporária de 8 digitos
         String senhaCriptografada =  UUID.randomUUID().toString().substring(0, 8);
-        entity.setSenha(senhaCriptografada);
+        entity.setSenha(encoder.encode(senhaCriptografada));
 
         repository.save(entity);
 
@@ -47,8 +47,6 @@ public class UsuarioService {
                 " para acessar os recusos online basta informar seu login e senha conforme abaixo.\n\nLogin: %s\nSenha: %s\n\nAtenciosamente,\nDigytal", request.getNome(), request.getLogin(), senhaCriptografada);
         m.setBody(msg);
         sendEmail.send(m);
-
-
     }
     @Transactional
     public void gerarSenhaTemporaria(String email){
@@ -59,11 +57,19 @@ public class UsuarioService {
          */
         //uma senha temporária de 8 digitos
         String senhaCriptografada =  UUID.randomUUID().toString().substring(0, 8);
-        entity.setSenha(senhaCriptografada);
+        System.out.println("***"+senhaCriptografada+"***");
+        entity.setSenha(encoder.encode(senhaCriptografada));
 
         repository.save(entity);
-    }
 
+        Message m = new Message();
+        m.setTo(entity.getEmail());
+        m.setTitle("Digytal APP - Reset de Senha");
+        String msg = String.format("Olá %s,\nSegue nova senha temporária para que você possa voltar a acessar a nossa plataforma.\n\n " +
+                "Senha temporária: %s\n\nAtenciosamente,\nDigytal", entity.getNome(), senhaCriptografada);
+        m.setBody(msg);
+        sendEmail.send(m);
+    }
     @Transactional
     public void alterarSenha(UsuarioNovaSenha novaSenha){
         //localizando o usuario pelo login
@@ -75,17 +81,8 @@ public class UsuarioService {
 
         //uma senha temporária de 8 digitos
         String senhaCriptografada =  novaSenha.getSenhaNova();
-        entity.setSenha(senhaCriptografada);
+        entity.setSenha(encoder.encode(senhaCriptografada));
 
         repository.save(entity);
-
-        Message m = new Message();
-        m.setTo(entity.getEmail());
-        m.setTitle("Digytal APP - Reset de Senha");
-        String msg = String.format("Olá %s,\nSegue nova senha temporária para que você possa voltar a acessar a nossa plataforma.\n\n " +
-                "Senha temporária: %s\n\nAtenciosamente,\nDigytal", entity.getNome(), senhaCriptografada);
-        m.setBody(msg);
-        sendEmail.send(m);
-
     }
 }
