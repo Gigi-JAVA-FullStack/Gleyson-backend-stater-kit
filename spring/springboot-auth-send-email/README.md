@@ -54,3 +54,12 @@ Observe que na configuração o parâmetro `spring.mail.password` espera uma var
 
 O serviço de envio de Google tem o recurso de adicionar senhas adicionais para finalidades específicas de uso (Senhas de App), no nosso caso, envio de e-mail através da nossa API, veja tutorial no link [movidesk](https://atendimento.movidesk.com/kb/article/280320/configurar-senha-app-google-movidesk).
 
+## Refatoração
+
+Agora o nosso usuário terá mais um atributo senha aonde será utilizada para enviar a senha temporária ou quando o mesmo necessitar resetar a senha.
+
+Alterações
+
+1. Criada a migrations `V01_05__alter_tab_usuario_add_email.sql`;
+2. Alterar as classes em `model.usuario` para contemplar o novo campo `email`;
+3. Adicionar o método no `UsuarioRepository` que possa localizar o usuário pelo e-mail;
