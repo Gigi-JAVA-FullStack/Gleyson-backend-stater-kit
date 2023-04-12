@@ -38,7 +38,7 @@ Habilitar o envio de e-mail pelo SpringBoot integrando ao G-Mail hoje é uma tar
 spring.mail.host=smtp.gmail.com
 spring.mail.port=587
 spring.mail.username=gleyson@digytal.com.br
-spring.mail.password=** SUA_SENHA **
+spring.mail.password=${EMAIL_PASSWORD}
 spring.mail.properties.mail.smtp.auth=true
 spring.mail.properties.mail.smtp.starttls.enable=true
 spring.mail.properties.mail.smtp.starttls.required=true
@@ -46,4 +46,11 @@ spring.mail.properties.mail.smtp.ssl.enable=false
 spring.mail.test-connection=false
 ```
 
+Observe que na configuração o parâmetro `spring.mail.password` espera uma variável chamada de `${EMAIL_PASSWORD}`, quando for executar sua aplicação, você definirá esta variável utilizando sua IDE ou informando como variáveis de ambiente no Spring.
+
 >Duas observações em relação a configuração acima, primeira seu e-mail e senha **NÃO PODEM** estar diretamente no `application.properties` e sim na configuração de seu servidor ou container e o G-Mail recomanda **NÃO USAR** sua senha pessoal, mas sim criar uma senha para esta finalidade em específica.
+
+3. G-Mail senhas adicionais
+
+O serviço de envio de Google tem o recurso de adicionar senhas adicionais para finalidades específicas de uso (Senhas de App), no nosso caso, envio de e-mail através da nossa API, veja tutorial no link [movidesk](https://atendimento.movidesk.com/kb/article/280320/configurar-senha-app-google-movidesk).
+
