@@ -14,7 +14,4 @@ public class UsuarioRequest {
     @Schema(description="E-mail", example = "iza.belly@hotmail.com")
     private String email;
 
-    @Schema(description="Senha", example = "Dad@123")
-    private String senha;
-
 }

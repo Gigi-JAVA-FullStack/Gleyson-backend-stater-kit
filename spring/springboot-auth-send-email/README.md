@@ -62,9 +62,11 @@ Agora o nosso usuário terá mais um atributo senha aonde será utilizada para e
 
 Precisaremos configurar um objeto que representará um transmissor de e-mail e lembrando que em Java tudo é objeto, logo, o e-mail será um objeto.
 
-1. Criando novo recurso disponível em `infra.email`.
+1. Criando novo recurso disponível em `infra.email`, ver classe `SendEmailService`.
 
 **Alterações**
+
+Esta jornada será composta por 2 etapas, a primeira agora o usuário receberá uma senha temporário e após poderá alterar a senha passando seu e-mail, senha atual e a nova senha.
 
 1. Criada a migrations `V01_05__alter_tab_usuario_add_email.sql`;
 2. Alterar as classes em `model.usuario` para contemplar o novo campo `email`;
