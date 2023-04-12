@@ -58,8 +58,16 @@ O serviço de envio de Google tem o recurso de adicionar senhas adicionais para 
 
 Agora o nosso usuário terá mais um atributo senha aonde será utilizada para enviar a senha temporária ou quando o mesmo necessitar resetar a senha.
 
-Alterações
+**Novos recursos**
+
+Precisaremos configurar um objeto que representará um transmissor de e-mail e lembrando que em Java tudo é objeto, logo, o e-mail será um objeto.
+
+1. Criando novo recurso disponível em `infra.email`.
+
+**Alterações**
 
 1. Criada a migrations `V01_05__alter_tab_usuario_add_email.sql`;
 2. Alterar as classes em `model.usuario` para contemplar o novo campo `email`;
 3. Adicionar o método no `UsuarioRepository` que possa localizar o usuário pelo e-mail;
+4. Implementar na classe `UsuarioService` enviar e-mail ao criar um novo usuário
+5. Implementar na classe `UsuarioService` um novo recurso de esqueci a senha e alterar a senha.
