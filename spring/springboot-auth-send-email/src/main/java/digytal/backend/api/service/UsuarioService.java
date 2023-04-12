@@ -37,7 +37,8 @@ public class UsuarioService {
         //uma senha temporária de 8 digitos
         String senhaCriptografada =  UUID.randomUUID().toString().substring(0, 8);
         entity.setSenha(encoder.encode(senhaCriptografada));
-
+        entity.setRole("USER");
+        entity.setEmail(request.getEmail());
         repository.save(entity);
 
         Message m = new Message();
