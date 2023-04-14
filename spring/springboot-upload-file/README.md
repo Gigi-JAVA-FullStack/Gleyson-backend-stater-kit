@@ -54,16 +54,16 @@ Para disponibilizar estes recursos com base no CRUD de um Cliente já existente 
 4. Criamos mais um recurso `webservice.FileUploadResource` para tratar requisições relacionadas a upload de imgagens  
 
 
-### CRUD de Clientes
+### Novas Operações
 
-Vamos realizar as operações básicas relacionadas em uma gestão de clientes:
+Abaixo temos novos recursos em nossa API
 
 | Database | HTTP                  | Descrição                                                  |
 |----------|-----------------------|------------------------------------------------------------|
-| INSERT   | POST:/clientes        | Inclusão de um novo cliente                                |
-| UPDATE   | PUT:/clientes         | Alteraração do cliente cadastrado                          |
-| SELECT   | GET:/clientes/{id}    | Busca o cliente pelo ID informado                          |
-| DELETE   | DELETE:/clientes/{id} | Remove o cliente da base de dados pelo o ID correspondente |
-| SELECT   | GET:/clientes         | Lista todos os clientes na base de dados                   |
+| UPDATE   | PATCH:/clientes/photo-path/{id}| Adiciona o endereço da imagem no disco para o usuário localizado pelo ID|
+| UPDATE   | PATCH:/clientes/photo-byte/{id}         | Adiciona os bytes da imagem no banco de dados para o usuário localizado pelo ID|
+| SELECT   | GET:/upload-file/view-from-disk/{id}    | Busca o cliente pelo ID informado e retorna a imagem em disco - **MELHORAR**|
+| SELECT   | GET:/upload-file/view-from-database/{id}    | Busca o cliente pelo ID informado e retorna o byte array da imagem salva no banco|
+| NONE     | POST:/upload-file/save-on-disk    | Simplesmente salva a imagem no disco, ver `application.properties` |
 
 
