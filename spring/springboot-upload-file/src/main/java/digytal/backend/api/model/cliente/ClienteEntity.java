@@ -33,11 +33,11 @@ public class ClienteEntity {
     @Column(length = 10, nullable = false)
     private Sexo sexo;
 
-    @Column(name = "img_path",length = 100)
-    private String imgPath;
+    @Column(name = "photo_path",length = 100)
+    private String photoPath;
 
     @Lob //em alguns bancos
-    @Column(name = "img_photo")
-    private byte[] photo;
+    @Column(name = "photo_byte")
+    private byte[] photoByte;
 
 }

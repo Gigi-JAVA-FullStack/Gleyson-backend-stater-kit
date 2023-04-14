@@ -76,7 +76,7 @@ public class ClienteService {
         try {
             File path = fileUploadService.saveOnDisk(uploadFile);
             ClienteEntity entity = repository.findById(id).orElse(null);
-            entity.setImgPath(path.getAbsolutePath());
+            entity.setPhotoPath(path.getAbsolutePath());
             repository.save(entity);
         } catch (Exception e) {
             throw new RuntimeException(e);
@@ -86,7 +86,7 @@ public class ClienteService {
     public void changeEntityPhoto(Integer id, MultipartFile uploadFile){
         try {
             ClienteEntity entity = repository.findById(id).orElse(null);
-            entity.setPhoto(uploadFile.getBytes());
+            entity.setPhotoByte(uploadFile.getBytes());
             repository.save(entity);
         } catch (Exception e) {
             throw new RuntimeException(e);

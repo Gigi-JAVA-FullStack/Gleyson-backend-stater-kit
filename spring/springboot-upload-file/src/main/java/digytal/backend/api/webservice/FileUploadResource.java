@@ -50,7 +50,7 @@ public class FileUploadResource {
     public ResponseEntity<byte[]>  viewFromData(@PathVariable("id") Integer id) {
         try {
             ClienteEntity entity = repository.findById(id).orElse(null);
-            byte[] image = entity.getPhoto();
+            byte[] image = entity.getPhotoByte();
             return ResponseEntity
                     .ok()
                     .contentType(MediaType.IMAGE_JPEG)
