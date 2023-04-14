@@ -42,7 +42,6 @@ Acesse o link : `http://localhost:8080/h2-console`
 
 ![image](https://github.com/glysns/backend-stater-kit/blob/main/spring/springboot-crud-api/src/main/resources/img/h2-login.png)
 
-![image](https://github.com/glysns/backend-stater-kit/blob/main/spring/springboot-crud-api/src/main/resources/img/h2-sql.png)
 
 #### Refatoração
 
@@ -65,5 +64,13 @@ Abaixo temos novos recursos em nossa API
 | SELECT   | GET:/upload-file/view-from-disk/{id}    | Busca o cliente pelo ID informado e retorna a imagem em disco - **MELHORAR**|
 | SELECT   | GET:/upload-file/view-from-database/{id}    | Busca o cliente pelo ID informado e retorna o byte array da imagem salva no banco|
 | NONE     | POST:/upload-file/save-on-disk    | Simplesmente salva a imagem no disco, ver `application.properties` |
+
+
+![image](https://github.com/glysns/backend-stater-kit/blob/main/spring/springboot-crud-api/src/main/resources/img/swagger-cliente-photo.png)
+
+![image](https://github.com/glysns/backend-stater-kit/blob/main/spring/springboot-crud-api/src/main/resources/img/img_path.png)
+
+![image](https://github.com/glysns/backend-stater-kit/blob/main/spring/springboot-crud-api/src/main/resources/img/img_byte.png)
+
 
 
