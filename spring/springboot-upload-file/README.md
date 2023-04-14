@@ -8,7 +8,8 @@
 
 ## BackEnd - StarterKit - Spring Upload File - Api
 
-Este projeto tem a finaliade de disponibilizar uma API para realizar upload e exibição de imagens salvas no disco ou em um banco de dados.
+Este projeto tem a finaliade de disponibilizar uma API para realizar upload e exibição de imagens salvas no disco ou em um banco de dados. O projeto foi baseado no exemplo [springboot-crud-api](https://github.com/glysns/backend-stater-kit/tree/main/spring/springboot-crud-api)
+
 ### Tecnologias
 
 * Java 1.8+
@@ -23,26 +24,11 @@ Este projeto tem a finaliade de disponibilizar uma API para realizar upload e ex
 
 #### Configurações adicionais
 
-O SpringBoot é facilmente configurável a qualquer provedor de acesso a dados como H2 Database, PostgreSQL, MySQL, SQLServer, Oracle Database entre outros, basta informar a biblioteca correspondente e configurar a sua conexão de bancos de dados no arquivo `resources/application.properties`.
-
-*Configurando o banco em memória H2Database*
-
-#### **`pom.xml`**
-```xml
-<dependency>
-    <groupId>com.h2database</groupId>
-    <artifactId>h2</artifactId>
-    <scope>runtime</scope>
-</dependency>
-```
+Vamos definir em nossa configuração um diretório padrão para armazenar as imagens recebidos via upload conforme abaixo:
 
 #### **`application.properties`**
 ```shell
-spring.datasource.url=jdbc:h2:mem:crud-api
-spring.datasource.driverClassName=org.h2.Driver
-spring.datasource.username=sa
-spring.datasource.password=sa
-spring.jpa.database-platform=org.hibernate.dialect.H2Dialect
+file.upload.folder=${PRODUCTION_FILE_UPLOAD_FOLDER:c:\\digytal}
 ```
 
 > O H2 disponibiliza uma interface web para visualizar as tabelas e realizar operações básicas de SQL.
@@ -58,60 +44,7 @@ Acesse o link : `http://localhost:8080/h2-console`
 
 ![image](https://github.com/glysns/backend-stater-kit/blob/main/spring/springboot-crud-api/src/main/resources/img/h2-sql.png)
 
-#### Documentação da API
-
-O Swagger é um framework composto por diversas ferramentas que, independente da linguagem, auxilia a descrição, consumo e visualização de serviços de uma API REST.
-
-```xml
-<dependency>
-    <groupId>org.springdoc</groupId>
-    <artifactId>springdoc-openapi-ui</artifactId>
-    <version>1.6.4</version>
-</dependency>
-```
-
-Ao iniciar o seu projeto, acesse a documentação do sua aplicação através do link: `http://localhost:8080/swagger-ui/index.html`
-
-### Estrutura do projeto
-
-O projeto é composto por pacotes que classificam as classes de acordo com o seu papel ou finalidades específicas.
-
-O pacote principal é `digytal.backend.api`.
-
-| Nome       | Descrição                                                                                      |
-|------------|------------------------------------------------------------------------------------------------|
-| enums      | pacote que contém os enums do sistema                                                          |
-| model      | pacote que contém as classes de modelo do sistema (entidades e dtos)                           |
-| repository | pacote que contém as interfaces responsáveis pela persistência de cada entidade correspondente |
-| service    | pacote que contém as classes responsáveis por gerenciar as regras de negóicio da aplicação    |
-| webservice | pacote que contém as classes que representam os recursos https disponíveis pela aplicação      |
-
-### Model
-
-As aplicações costumam separar a camada de domínio (Entity) com a camada de transferência de dados (DTO) para manter a segurança no que se refere ao acesso à dados.
-Para implementar nosso projeto seguindo esta diretriz, organizamos a nossa camada de modelo contendo três arquivos comuns para cada entidade da aplicação.
-
-* Entity - Classe mapeada com JPA para representar uma tabela no banco de dados
-* Request - Classe que será utilizada para realizar operações de inclusão e alteração de registros
-* Response - Classe que representa a resposta no formato JSon das consultas realizadas pela aplicação.
-
-### Executando a aplicação
-
-Para executar a aplicação é simples, basta abrir a classe `SpringbootCrudApiApplication` e ativar  `run` ou `debug` em sua IDE.
-
-Estando tudo certinho conforme log abaixo, basta acessar o link: `http://localhost:8080/swagger-ui/index.html`
-
-```shell
-2023-04-08 13:08:56.368  INFO 20680 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2023-04-08 13:08:56.375  INFO 20680 --- [           main] d.b.api.SpringbootCrudApiApplication     : Started SpringbootCrudApiApplication in 3.096 seconds (JVM running for 4.029)
-2023-04-08 13:09:00.612  INFO 20680 --- [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2023-04-08 13:09:00.612  INFO 20680 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2023-04-08 13:09:00.613  INFO 20680 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2023-04-08 13:09:01.196  INFO 20680 --- [nio-8080-exec-4] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 299 ms
-```
-
-![image](https://github.com/glysns/backend-stater-kit/blob/main/spring/springboot-crud-api/src/main/resources/img/swagger-crud-cliente.png)
-
+#### Refatoração
 
 ### CRUD de Clientes
 
