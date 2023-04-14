@@ -21,6 +21,7 @@ Este projeto tem a finaliade de disponibilizar uma API para realizar upload e ex
 * H2 database
 * Swagger OpenAPI
 
+![image](https://github.com/glysns/backend-stater-kit/blob/main/spring/springboot-crud-api/src/main/resources/img/java-spring-framework.jpg)
 
 #### Configurações adicionais
 
