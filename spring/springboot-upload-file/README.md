@@ -46,6 +46,14 @@ Acesse o link : `http://localhost:8080/h2-console`
 
 #### Refatoração
 
+Para disponibilizar estes recursos com base no CRUD de um Cliente já existente foram realizados os procedimentos abaixo:
+
+1. Alterar a entidade `model.cliente.ClienteEntity` para ter os atributos `photoPath` ou `photoByte`;
+2. A classe `service.ClienteService` agora possui mais dois métodos: `changePhotoPath`e `changeEntityPhoto`
+3. Criamos a classe `service.FileUploadService` para gerenciar as ações de upload e exibição de arquivos
+4. Criamos mais um recurso `webservice.FileUploadResource` para tratar requisições relacionadas a upload de imgagens  
+
+
 ### CRUD de Clientes
 
 Vamos realizar as operações básicas relacionadas em uma gestão de clientes:
