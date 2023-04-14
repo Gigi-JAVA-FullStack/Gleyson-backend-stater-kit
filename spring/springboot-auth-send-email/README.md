@@ -73,3 +73,5 @@ Esta jornada será composta por 2 etapas, a primeira agora o usuário receberá 
 3. Adicionar o método no `UsuarioRepository` que possa localizar o usuário pelo e-mail;
 4. Implementar na classe `UsuarioService` enviar e-mail ao criar um novo usuário
 5. Implementar na classe `UsuarioService` um novo recurso de esqueci a senha e alterar a senha.
+
+![IMG](https://github.com/glysns/backend-stater-kit/blob/main/spring/springboot-crud-api/src/main/resources/img/user-login.png)
