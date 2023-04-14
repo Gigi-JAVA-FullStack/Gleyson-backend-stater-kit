@@ -29,7 +29,3 @@ Abaixo temos uma lista de projetos existentes na pasta `spring` onde exploramos 
 |[springboot-jwt-database-roles-authentication](https://github.com/glysns/backend-stater-kit/tree/main/spring/springboot-jwt-database-roles-authentication)|Projeto Web com implementação de autenticação com JWT baseado em perfil de usuário |Habilitar as configurações de autenticação ou gerenciamento de perfís de usuário|
 |[springboot-auth-send-email](https://github.com/glysns/backend-stater-kit/tree/main/spring/springboot-auth-send-email)|Projeto Web com implementação de envio de e-mail, criação de usuário e reset de senha |Habilitar recursos de envio de e-mail na aplicação|
 |[springboot-upload-file](https://github.com/glysns/backend-stater-kit/tree/main/spring/springboot-upload-file)|Projeto Web com implementação de upload e exibição de imagens |Possibilitar realizar o upload de imagens salvas em disco ou no banco de dados|
-
-
-
-https://github.com/glysns/backend-stater-kit/tree/main/spring/springboot-upload-file
