@@ -83,4 +83,14 @@ public class ClienteService {
         }
     }
 
+    public void changeEntityPhoto(Integer id, MultipartFile uploadFile){
+        try {
+            ClienteEntity entity = repository.findById(id).orElse(null);
+            entity.setPhoto(uploadFile.getBytes());
+            repository.save(entity);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+
 }

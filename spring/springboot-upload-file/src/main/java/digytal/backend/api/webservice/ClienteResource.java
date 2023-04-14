@@ -45,9 +45,13 @@ public class ClienteResource {
     }
 
     //PARTE DE EXEMPLO DE UPLOAD FILE
-    @PatchMapping(path ="/{id}", consumes = {MediaType.MULTIPART_FORM_DATA_VALUE})
+    @PatchMapping(path ="/photo-path/{id}", consumes = {MediaType.MULTIPART_FORM_DATA_VALUE})
     public void changePhotoPath(@PathVariable("id") Integer id, @RequestPart("file") MultipartFile uploadFile){
         service.changePhotoPath(id, uploadFile);
+    }
+    @PatchMapping(path ="/photo-byte/{id}", consumes = {MediaType.MULTIPART_FORM_DATA_VALUE})
+    public void changeEntityPhoto(@PathVariable("id") Integer id, @RequestPart("file") MultipartFile uploadFile){
+        service.changeEntityPhoto(id, uploadFile);
     }
 
 }

@@ -36,6 +36,7 @@ public class ClienteEntity {
     @Column(name = "img_path",length = 100)
     private String imgPath;
 
+    @Lob //em alguns bancos
     @Column(name = "img_photo")
     private byte[] photo;
 
