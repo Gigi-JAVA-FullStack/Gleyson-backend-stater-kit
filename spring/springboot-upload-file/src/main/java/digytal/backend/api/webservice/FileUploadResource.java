@@ -1,5 +1,7 @@
 package digytal.backend.api.webservice;
 
+import digytal.backend.api.model.cliente.ClienteEntity;
+import digytal.backend.api.repository.ClienteRepository;
 import digytal.backend.api.service.FileUploadService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
@@ -28,8 +30,8 @@ public class FileUploadResource {
             return null;
         }
     }
-    @GetMapping(path="/view",produces = MediaType.IMAGE_JPEG_VALUE)
-    public ResponseEntity<byte[]>  getImg() {
+    @GetMapping(path="/view-from-disk",produces = MediaType.IMAGE_JPEG_VALUE)
+    public ResponseEntity<byte[]>  viewFromDisk() {
         try {
             byte[] image = Files.readAllBytes(Paths.get("C:\\digytal\\java-spring-framework.jpg"));
 
@@ -38,6 +40,22 @@ public class FileUploadResource {
                     .contentType(MediaType.IMAGE_JPEG)
                     .body(image);
         } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @Autowired
+    private ClienteRepository repository;
+    @GetMapping(path="/view-from-database/{id}",produces = MediaType.IMAGE_JPEG_VALUE)
+    public ResponseEntity<byte[]>  viewFromData(@PathVariable("id") Integer id) {
+        try {
+            ClienteEntity entity = repository.findById(id).orElse(null);
+            byte[] image = entity.getPhoto();
+            return ResponseEntity
+                    .ok()
+                    .contentType(MediaType.IMAGE_JPEG)
+                    .body(image);
+        } catch (Exception e) {
             throw new RuntimeException(e);
         }
     }
