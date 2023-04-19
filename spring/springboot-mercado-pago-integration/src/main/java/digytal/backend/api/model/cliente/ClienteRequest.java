@@ -1,6 +1,5 @@
 package digytal.backend.api.model.cliente;
 
-import digytal.backend.api.enums.Sexo;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;
 
@@ -14,8 +13,8 @@ public class ClienteRequest {
     private String cpf;
     @Schema(description="Data de nascimento", example = "1988-01-01")
     private LocalDate dataNascimento;
-    @Schema(description="Renda mensal", example = "2456.87")
-    private Double rendaMensal;
-    @Schema(description="Sexo do cliente", example = "MASCULINO")
-    private Sexo sexo;
+    @Schema(description="E-mail", example = "gleyson@digytal.com.br")
+    private String email;
+
+
 }

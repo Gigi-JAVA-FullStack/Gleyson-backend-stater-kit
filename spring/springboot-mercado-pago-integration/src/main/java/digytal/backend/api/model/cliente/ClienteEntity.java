@@ -1,6 +1,6 @@
 package digytal.backend.api.model.cliente;
 
-import digytal.backend.api.enums.Sexo;
+
 import lombok.AccessLevel;
 import lombok.Data;
 import lombok.Setter;
@@ -26,11 +26,7 @@ public class ClienteEntity {
     @Column(name = "dt_nascimento", nullable = false)
     private LocalDate dataNascimento;
 
-    @Column(name = "renda_mensal", nullable = false, length = 9, precision = 2)
-    private Double rendaMensal;
-
-    @Enumerated(EnumType.STRING)
-    @Column(length = 10, nullable = false)
-    private Sexo sexo;
+    @Column(nullable = false)
+    private String email;
 
 }
