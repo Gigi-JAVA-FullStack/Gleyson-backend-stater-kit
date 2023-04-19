@@ -1,4 +1,4 @@
-package digytal.backend.api.model.cliente;
+package digytal.backend.api.properties;
 
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
@@ -10,7 +10,7 @@ import java.time.LocalDate;
 @Configuration
 @ConfigurationProperties(prefix = "cadastro")
 @Data
-public class Cadastro {
+public class CadastroProperties {
     private String nome;
     private String cpf;
     private String email;

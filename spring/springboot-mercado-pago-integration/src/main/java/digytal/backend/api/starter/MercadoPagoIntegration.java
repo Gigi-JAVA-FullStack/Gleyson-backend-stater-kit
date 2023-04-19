@@ -1,6 +1,6 @@
 package digytal.backend.api.starter;
 
-import digytal.backend.api.model.cliente.Cadastro;
+import digytal.backend.api.properties.CadastroProperties;
 import digytal.backend.api.model.cliente.ClienteRequest;
 import digytal.backend.api.service.ClienteService;
 import org.springframework.beans.BeanUtils;
@@ -13,10 +13,10 @@ public class MercadoPagoIntegration {
     private ClienteService service;
 
     @Autowired
-    private Cadastro cadastro;
+    private CadastroProperties cadastroProperties;
     public void execute(){
         ClienteRequest request = new ClienteRequest();
-        BeanUtils.copyProperties(cadastro,request);
+        BeanUtils.copyProperties(cadastroProperties,request);
 
         System.out.println(request);
     }
