@@ -12,4 +12,5 @@ public class MercadoPagoCredencial {
     private String clientId;
     private String clientSecret;
     private String publicKey;
+    private String planId;
 }

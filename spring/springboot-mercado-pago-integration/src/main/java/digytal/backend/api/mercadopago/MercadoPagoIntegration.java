@@ -26,7 +26,7 @@ public class MercadoPagoIntegration {
 
         RestTemplate client = new RestTemplate();
         HttpEntity<String> entity = new HttpEntity<String>(headers());
-        ResponseEntity<String> result = client.exchange(URL.concat("/preapproval_plan/search"), HttpMethod.GET,entity, String.class);
+        ResponseEntity<String> result = client.exchange(URL.concat("/preapproval_plan/"+ credencial.getPlanId()), HttpMethod.GET,entity, String.class);
 
         System.out.println(result);
     }
@@ -34,7 +34,7 @@ public class MercadoPagoIntegration {
     private HttpHeaders headers(){
         HttpHeaders headers = new HttpHeaders();
 
-        System.out.println("TOKEN" + credencial.getAccessToken());
+        System.out.println("TOKEN -> " + credencial.getAccessToken());
 
         headers.setContentType(MediaType.APPLICATION_JSON);
         headers.set("Authorization", "Bearer "+credencial.getAccessToken());
