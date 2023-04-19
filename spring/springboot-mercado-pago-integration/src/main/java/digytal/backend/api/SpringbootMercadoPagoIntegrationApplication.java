@@ -1,6 +1,6 @@
 package digytal.backend.api;
 
-import digytal.backend.api.starter.MercadoPagoIntegration;
+import digytal.backend.api.mercadopago.MercadoPagoIntegration;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
