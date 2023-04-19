@@ -31,6 +31,15 @@ public class MercadoPagoIntegration {
         System.out.println(result);
     }
 
+    public void listarAssinaturas(){
+
+        RestTemplate client = new RestTemplate();
+        HttpEntity<String> entity = new HttpEntity<String>(headers());
+        ResponseEntity<String> result = client.exchange(URL.concat("/preapproval/search"), HttpMethod.GET,entity, String.class);
+
+        System.out.println(result);
+    }
+
     private HttpHeaders headers(){
         HttpHeaders headers = new HttpHeaders();
 
