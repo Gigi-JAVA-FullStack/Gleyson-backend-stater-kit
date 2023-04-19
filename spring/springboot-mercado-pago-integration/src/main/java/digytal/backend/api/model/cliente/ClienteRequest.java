@@ -16,5 +16,13 @@ public class ClienteRequest {
     @Schema(description="E-mail", example = "gleyson@digytal.com.br")
     private String email;
 
-
+    @Override
+    public String toString() {
+        return "ClienteRequest{" +
+                "nome='" + nome + '\'' +
+                ", cpf='" + cpf + '\'' +
+                ", dataNascimento=" + dataNascimento +
+                ", email='" + email + '\'' +
+                '}';
+    }
 }
