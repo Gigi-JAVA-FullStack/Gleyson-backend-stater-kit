@@ -21,6 +21,8 @@ public class SpringbootAuthSendEmailApiApplication {
 			message.setTo("gleyson.s@hotmail.com");
 			message.setTitle("Digytal Spring Send Email");
 			message.setBody("Este é um exemplo de e-mail enviado pelo Spring Send E-mail");
+
+			sendEmail.send(message);
 		};
 	}
 }
